@@ -14,7 +14,7 @@ import torch
 
 load_dotenv()
 # === Setup Inference Client ===
-client = InferenceClient(provider="fireworks-ai", api_key=os.getenv("hf_token"))
+client = InferenceClient(provider="fireworks-ai", api_key=os.getenv("hf_token") or st.secrets["hf_token"])
 def query_llm(prompt):
     # prompt = json.dumps({"messages": messages, "actions": actions or []})
     try:

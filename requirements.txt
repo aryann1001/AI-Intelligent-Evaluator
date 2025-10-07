@@ -5,3 +5,6 @@ huggingface-hub
 python-dotenv
 requests
 firecrawl-py
+docker
+sentence-transformers
+torch

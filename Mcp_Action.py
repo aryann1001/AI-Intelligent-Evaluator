@@ -4,11 +4,12 @@ import re
 import requests
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
+import streamlit as st
  
 load_dotenv()
  
-FIRECRAWL_API_KEY = os.getenv("firecrawl_api_key")
-HF_TOKEN = os.getenv("hf_token")
+FIRECRAWL_API_KEY = os.getenv("firecrawl_api_key") or st.secrets["firecrawl_api_key"]
+HF_TOKEN = os.getenv("hf_token") or st.secrets["hf_token"]
  
 client = InferenceClient(provider="fireworks-ai", api_key=HF_TOKEN)
  

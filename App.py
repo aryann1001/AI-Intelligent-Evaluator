@@ -46,7 +46,7 @@ if st.session_state.role == "student":
     #--------------------------------------------------------------------------------------------------------
     # === LLM Client Setup ===
     load_dotenv()
-    hf_token = os.getenv("hf_token")
+    hf_token = os.getenv("hf_token") or st.secrets["hf_token"]
     client = InferenceClient(provider="fireworks-ai", api_key=hf_token)
 
     # === UI Setup ===

@@ -6,10 +6,11 @@ from streamlit_autorefresh import st_autorefresh
 from Actions import *
 from dotenv import load_dotenv
 import os
+import streamlit as st
 
 # === Fireworks.ai client setup ===
 load_dotenv()
-hf_token = os.getenv("hf_token")
+hf_token = os.getenv("hf_token") or st.secrets["hf_token"]
 client = InferenceClient(provider="fireworks-ai", api_key=hf_token)
 
 # === Action Map ===
