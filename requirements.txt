@@ -1,0 +1,7 @@
+streamlit
+streamlit-ace
+streamlit-autorefresh
+huggingface-hub
+python-dotenv
+requests
+firecrawl-py

@@ -1,0 +1,89 @@
+:root{
+  --primary:#4B7BEC;
+  --radius:10px;
+  /* defaults (will be overridden by theme scopes below) */
+  --bg: #0E1117;
+  --bg-2:#161A23;
+  --surface: #161A23;
+  --text:#E6E6E6;
+  --muted:#A0A6B1;
+  --border:#232836;
+  --success:#2ecc71;
+  --warning:#f39c12;
+  --danger:#e74c3c;
+}
+
+/* Respect Streamlit theme: data-theme is set on the root */
+[data-theme="dark"]{
+  --bg:#0E1117;
+  --bg-2:#161A23;
+  --surface:#161A23;
+  --text:#E6E6E6;
+  --muted:#A0A6B1;
+  --border:#232836;
+}
+
+[data-theme="light"]{
+  --bg:#ffffff;
+  --bg-2:#f7f8fa;
+  --surface:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e2e8f0;
+}
+
+/* Base layout (do not force background with !important so theme can shine) */
+body { color: var(--text); }
+
+/* Centered app container sizing tweaks */
+.block-container{ max-width: 980px !important; padding-top: 2rem !important; padding-bottom: 4rem !important; }
+
+/* Typography */
+h1, .stMarkdown h1{ font-size: 2.1rem; letter-spacing: .2px; color: var(--text); }
+h2, .stMarkdown h2{ font-size: 1.5rem; color: var(--text); }
+h3, .stMarkdown h3{ font-size: 1.2rem; color: var(--text); }
+
+/* Cards (secondary backgrounds) */
+.stTabs, .stAlert, .stDataFrame, .st-cq, .st-ce{ background: var(--surface); border-radius: var(--radius); }
+
+/* Inputs */
+input, textarea{ background: var(--surface); color: var(--text); border-radius: 8px; border: 1px solid var(--border); }
+
+/* Select, radio, checkbox spacing */
+.stRadio, .stSelectbox, .stMultiSelect, .stTextInput, .stTextArea{ padding: .25rem 0 .5rem 0; }
+
+/* Buttons */
+.stButton>button{ background: var(--primary); color: #fff; border: 0; border-radius: 8px; padding: .6rem 1rem; box-shadow: 0 6px 18px rgba(75,126,236,.25); }
+.stButton>button:hover{ filter: brightness(1.07); transform: translateY(-1px); }
+.stButton>button:disabled{ opacity: .6; }
+
+/* Columns gap */
+.css-ocqkz7, .stColumns{ gap: 1rem !important; }
+
+/* Divider */
+hr{ border-color: var(--border); }
+
+/* Code blocks */
+pre, code{ color: inherit; }
+
+/* Timer */
+#timer{ font-weight: 600; color: var(--primary); background: color-mix(in srgb, var(--primary) 12%, transparent); padding: .35rem .6rem; width: fit-content; border-radius: 6px; }
+
+/* Ace editor container */
+.ace_editor{ border-radius: 8px; border: 1px solid var(--border); }
+
+/* Success/Warning colors */
+.stAlert[data-baseweb="notification"]{ border-radius: 10px; }
+.stAlert .stMarkdown{ color: var(--text); }
+
+/* Radios and options */
+.stRadio label, .stSelectbox label{ color: var(--muted); }
+
+/* Table */
+[data-testid="stTable"]{ background: var(--surface); border-radius: 8px; }
+
+/* Page title spacing */
+.stTitle{ margin-bottom: .75rem !important; }
+
+/* Tag-like chips (if used later) */
+.tag{ display:inline-flex; align-items:center; gap:.35rem; background: var(--bg-2); padding:.2rem .5rem; border-radius: 999px; color: var(--text); border:1px solid var(--border); font-size:.8rem; }
